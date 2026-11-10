@@ -36,7 +36,7 @@ $prefecture = ['茨城県','栃木県','群馬県','埼玉県','千葉県','東�
 echo $prefecture[2] . 'と' . $prefecture[3] . 'は関東地方の都道府県です。' . "\n";
 
 // Q7 連想配列-1
-$city = [
+$area = [
   '東京都' => '新宿区', 
   '神奈川県' => '横浜市', 
   '千葉県' => '千葉市', 
@@ -44,27 +44,32 @@ $city = [
   '栃木県' => '宇都宮市' , 
   '群馬県' => '前橋市', 
   '茨城県' => '水戸市',
-  '岩手県' => '盛岡市',
-  '宮城県' => '仙台市'
 ];
 
-echo $city['東京都'] . "\n" . $city['神奈川県'] . "\n" . $city['千葉県'] . "\n" . $city['埼玉県'] . "\n" . $city['栃木県'] . "\n" . $city['群馬県'] . "\n" . $city['茨城県'] . "\n" ;
+foreach($area as $city) {
+  echo $city . "\n";
+}
+
 
 // Q8 連想配列-2
-foreach ($city as $x => $y) {
-  if($x === '埼玉県'){
-    echo $x . 'の県庁所在地は、' . $y . 'です。' . "\n";
+foreach ($area as $areaPrefecture => $areaCity) {
+  if($areaPrefecture === '埼玉県' && $areaCity === 'さいたま市'){
+    echo $areaPrefecture . 'の県庁所在地は、' . $areaCity . 'です。' . "\n";
   }
 }
 
 // Q9 連想配列-3
-foreach ($city as $a => $b) {
-  if($a !== '岩手県' && $a !== '宮城県') {
-    echo $a . 'の県庁所在地は、' . $b . 'です。' . "\n";
+$northArea = ['岩手県' => '盛岡市', '宮城県' => '仙台市'];
+$miniJapan = array_merge($area, $northArea);
+foreach ($miniJapan as $areaPrefecture => $areaCity) {
+  if(in_array($areaPrefecture, ['岩手県', '宮城県'])) {
+    echo $areaPrefecture . 'は関東地方ではありません。' . "\n";
   } else {
-    echo $a . 'は関東地方ではありません。' . "\n";
+    echo $areaPrefecture . 'の県庁所在地は、' . $areaCity . 'です。' . "\n";
   }
 }
+
+//in array
 
 // Q10 関数-1
 function hello($name) {
@@ -110,7 +115,7 @@ function evaluateGrade ($grade) {
 
     default:
     return '判定不明です。講師に問い合わせてください。';
-    break;
+
   }
 }
 
