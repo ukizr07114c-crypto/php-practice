@@ -1,14 +1,16 @@
 <?php
 // Q1 tic-tac問題
 echo '1から100までのカウントを開始します' . "\n";
-for ($i = 1; $i <= 100; $i++){
-  if($i % 4 === 0 && $i % 5 === 0){
+for ($i = 1; $i <= 100; $i++) {
+  if ($i % 4 === 0 && $i % 5 === 0) {
     echo 'tic-tac' . "\n";
-  }elseif ($i % 4 === 0){
+  } elseif ($i % 4 === 0) {
     echo 'tic' . "\n";
-  }elseif($i % 5 === 0){
+  } elseif ($i % 5 === 0) {
     echo 'tac' . "\n";
-  }else {echo $i . "\n";}
+  } else {
+    echo $i . "\n";
+  }
 }
 
 
@@ -35,7 +37,7 @@ $personalInfos = [
 echo $personalInfos[1]['name'] . 'の電話番号は' . $personalInfos[1]['tel'] . 'です。' . "\n";
 
 //問題２
-foreach($personalInfos as $index => $personalInfo) {
+foreach ($personalInfos as $index => $personalInfo) {
   $number = $index + 1;
   echo $number . '番目の' . $personalInfo['name'] . 'のメールアドレスは' . $personalInfo['mail'] . 'で、電話番号は' . $personalInfo['tel'] . 'です。' . "\n";
 }
@@ -78,12 +80,10 @@ echo $yamada->attend('PHP');
 
 // Q5 定義済みクラス
 //問題１
-$date = new DateTime ('2026-11-11');
+$date = new DateTime('2026-11-11');
 echo $date->modify('-1 months')->format('Y-m-d') . "\n";
 
 //問題２
-$oldDate = new DateTime ('1992-04-25');
+$oldDate = new DateTime('1992-04-25');
 $diff = $oldDate->diff($date, true)->format('%a');
 echo 'あの日から' . $diff . '日経過しました。';
-
-?>

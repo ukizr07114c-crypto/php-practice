@@ -62,7 +62,7 @@ foreach ($area as $areaPrefecture => $areaCity) {
 $northArea = ['岩手県' => '盛岡市', '宮城県' => '仙台市'];
 $miniJapan = array_merge($area, $northArea);
 foreach ($miniJapan as $areaPrefecture => $areaCity) {
-  if(in_array($areaPrefecture, ['岩手県', '宮城県'])) {
+  if(in_array($areaPrefecture, ['岩手県', '宮城県'])){
     echo $areaPrefecture . 'は関東地方ではありません。' . "\n";
   } else {
     echo $areaPrefecture . 'の県庁所在地は、' . $areaCity . 'です。' . "\n";
@@ -72,7 +72,7 @@ foreach ($miniJapan as $areaPrefecture => $areaCity) {
 //in array
 
 // Q10 関数-1
-function hello($name) {
+function hello($name){
   echo $name. 'さん、こんにちは。' . "\n";
 }
 
@@ -81,7 +81,7 @@ hello('安藤');
 
 // Q11 関数-2
 $price = 1000;
-function calcTaxInPrice ($price) {
+function calcTaxInPrice($price) {
   return $price * 1.1;
 }
 $taxInPrice = calcTaxInPrice($price);
@@ -89,10 +89,10 @@ echo $price . 'の商品の税込み価格は' . $taxInPrice . '円です。' . 
 
 
 // Q12 関数とif文
-function distinguishNum ($num) {
+function distinguishNum($num) {
   if ($num % 2 === 1) {
     echo $num . 'は奇数です。' . "\n";
-  }else {
+  }else{
     echo $num . 'は偶数です。' . "\n";
   }
 }
@@ -102,7 +102,7 @@ distinguishNum(24);
 
 // Q13 関数とswitch文
 function evaluateGrade ($grade) {
-  switch($grade) {
+  switch ($grade) {
     case 'A':
     case 'B':
     return '合格です。';
